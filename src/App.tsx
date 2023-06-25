@@ -1,21 +1,27 @@
-import React from 'react';
-import Header from './components/Header/Header'
-import Left from './components/Left/Left'
-import Center from './components/Center/Center'
-import Right from './components/Right/Right'
-import classes from './App.module.scss';
+import React, { useContext } from "react";
+import { MathContext } from "./components/MathContext";
+import { MathContextComponent } from "./components/MathContext";
+import Header from "./components/Header/Header";
+import Left from "./components/Left/Left";
+import Center from "./components/Center/Center";
+import Right from "./components/Right/Right";
+import classes from "./App.module.scss";
 
-function App() {
+const App: React.FC = () => {
+  const ctx = useContext(MathContext);
+
   return (
-    <div className={classes.app}>
-      <Header/>
-      <main className={classes.main}>
-        <Left/>
-        <Center/>
-        <Right/>
-      </main>
-    </div>
+    <MathContextComponent>
+      <div className={classes.app}>
+        <Header />
+        <main className={classes.main}>
+          <Left />
+          <Center />
+          <Right />
+        </main>
+      </div>
+    </MathContextComponent>
   );
-}
+};
 
 export default App;
