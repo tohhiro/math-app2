@@ -4,7 +4,12 @@ import classes from './Right.module.scss'
 const Right = () => {
   return (
     <section className={classes.right}>
-      <button className={classes.resetBtn}>Reset</button>
+      <button 
+        className={classes.resetBtn} 
+        data-testid="resetBtn"
+      >
+          Reset
+      </button>
     </section>
   )
 }
